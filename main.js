@@ -15,8 +15,35 @@ function criarPartida(parida){
     const div = document.createElement('div');
     div.classList.add('numero-partida');
 
-    div.innerHTML = `<h3>ID da partida <br>${parida.match_id}</h3>
-    <h3>Kill's <br>${parida.kills}</h3> 
+    div.innerHTML = 
+    `
+    <table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id partida</th>
+            <th scope="col">K</th>
+            <th scope="col">D</th>
+            <th scope="col">A</th>
+            <th scope="col">XP por Minuto</th>
+            <th scope="col">Ouro por Minuto</th>
+            <th scope="col">Dano em Heroi</th>
+            <th scope="col">Dano em torre</th> 
+        </tr>
+    <thead>
+
+    <tbody>
+        <tr>
+            <td>${parida.match_id}</td>
+            <td colspan="1">${parida.kills}</td>
+            <td colspan="1">${parida.deaths}</td>
+            <td colspan="1">${parida.assists}</td>
+            <td>${parida.xp_per_min}</td>
+            <td>${parida.gold_per_min}</td>
+            <td>${parida.hero_damage}</td>
+            <td>${parida.tower_damage}</td>
+        </tr>
+    </tbody>
+    </table>
     `;
 
     return div;
